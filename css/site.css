@@ -50,7 +50,7 @@ footer .social>a {
 
 footer .social>a:hover {
     opacity: 0.9;
-    color: var(--secondary-color);
+    color: red;
 
 }
 
@@ -79,12 +79,4 @@ pre[class*="language-"] {
     white-space: pre-wrap;
     word-break: break-all;
     word-wrap: break-word;
-}
-
-.reverse {
-
-    font-family: 'NoCurvesBoustrophedonRegular';
-    font-weight: normal;
-    font-style: normal;
-
 }

@@ -60,26 +60,47 @@
                 <div class="col-lg-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                            //Call hello world
-                            function HelloWorld(){
-                            alert("hello world");
+                            //get string from the page input
+                            //controller function
+                            function getValue(){
+                                document.getElementById("alert").classList.add("invisible");
+                                let userString = document.getElementById("userString").value;
+                                let reversed = reverseString(userString);
+                                displayString(reversed);
                             }
+                            //split the string into an array of sub strings by using the .split("") method
+                            // reverse the array using the .reverse() method
+                            //logic function
+                            function reverseString(str){
+                                let arr = [];
+                                arr = str.split("");
+                                let reversed = arr.reverse();
+                                let revString = reversed.join("");
+                                return revString;
+                            }
+                            // join the new array using the .join("") method to form the new reveresed string 
+                            // access the element and inject the new reversed string 
+                            //remove the invisible class from the> element to make it visible with the newly injected string
+                            //view function 
+                            function displayString(str){
+                                document.getElementById("msg").innerHTML = `Your string reversed is: ${str}`;
+                                document.getElementById("alert").classList.remove("invisible");
+                            }
+
                         </code>
                     </pre>
                 </div>
                 <div class="col-lg-4">
                     <h4 class="border-bottom mb-3">Code explanation below.</h4>
-                    <h5>getValues()</h5>
-                    <p>The code is broken into separate functions to divide the necessary steps before bringing them back together to display the result onto the page.</p>
-                    <p>The getValues( ) function starts and ends the entire process. Starting by identifying what the user-entered start and end values are, converting them to integers and then validating the data before passing it on to the next step.</p>
+                    <h5>getValue()</h5>
+                    <p>This is the controller function that is responsible for receiving and then sending the input provided bu the user. It will pass the input through the logic function and then through the view function to return their input string reversed.</p>
 
-                    <h5>generateNumbers()</h5>                    
-                    <p>The generateNumbers( ) function creates an array with every number integer from the start value to the end value (inclusive) and then passes it to the final step.</p>
+                    <h5>reverseString()</h5>
+                    <p>This function is the logic function and will break down the recieved string into substrings inside of an array. It then reverses the order of the substrings inside of the array. It then rejoins the now reversed substrings into a new string and passes it on to the display function </p>
 
-                    <h5>displayNumbers()</h5>
-                    <p>The displayNumbers( ) function iterates through the array that is passed in. On each iteration it assigns a "class" variable either an even or odd value depending on if the current value in the array that is being accessed is even or odd.</p>
-                    <p>Then it injects the currently accessed number and its corresponding class into the table to be displayed. From here we access the injected class in CSS to change the font-weight to bold for every even value.</p>
-                    
+                    <h5>displayString()</h5>
+                    <p>The display function injects the new string into the html element and makes it appear on the display for the user. </p>
+
                 </div>
             </div>
         </div>
@@ -96,11 +117,14 @@
                 </div>"
                 <div class="col-12 col-lg d-flex align-items-center justify-content-start justify-content-lg-end">
                     <div class="row">
-                        <div class="col social"><a href="https://www.linkedin.com/in/ron-aviles/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                        <div class="col social"><a href="https://www.linkedin.com/in/ron-aviles/" target="_blank"><i
+                                    class="fab fa-linkedin fa-2x"></i></a>
                         </div>
-                        <div class="col social"><a href="https://github.com/RonAviles" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+                        <div class="col social"><a href="https://github.com/RonAviles" target="_blank"><i
+                                    class="fab fa-github fa-2x"></i></a>
                         </div>
-                        <div class="col social"><a href="https://twitter.com/RonAviles_" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+                        <div class="col social"><a href="https://twitter.com/RonAviles_" target="_blank"><i
+                                    class="fab fa-twitter fa-2x"></i></a>
                         </div>
                     </div>
                 </div>
